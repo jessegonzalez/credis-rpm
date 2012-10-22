@@ -1,5 +1,3 @@
-%define builddir $RPM_BUILD_DIR/%{name}-%{version}
-
 Name:		credis	
 Version:	0.2.3
 Release:	1%{?dist}
@@ -52,7 +50,6 @@ ln -s libcredis.so.%{version} libcredis.so
 
 %clean
 rm -rf %{buildroot}
-rm -rf %{builddir}
 
 %files
 %defattr(-,root,root,-)
