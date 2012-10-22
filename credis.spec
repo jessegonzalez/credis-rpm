@@ -1,5 +1,3 @@
-%define builddir $RPM_BUILD_DIR/%{name}-%{version}
-
 Name:		credis	
 Version:	0.2.3
 Release:	1%{?dist}
@@ -12,19 +10,21 @@ BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 Packager:	Jesse Gonzalez <jesse.gonzalez@rackspace.com>
 
 %description 
-Credis is a client library in plain C for communicating with Redis servers. Redis is a high performance key-value database, refer to Redis project page for more information.
+Credis is a client library in plain C for communicating with Redis servers.
+Redis is a high performance key-value database, refer to Redis project page
+for more information.
 
-Credis aims to be fast and minimalistic with respect to memory usage. It supports connections to multiple Redis servers. It runs on Linux, OS X, Windows, FreeBSD and should run on most POSIX like systems. It is released under the New BSD License.
+Credis aims to be fast and minimalistic with respect to memory usage. It
+supports connections to multiple Redis servers. It runs on Linux, OS X,
+Windows, FreeBSD and should run on most POSIX like systems. It is released
+under the New BSD License.
 
 Static and dynamic libraries for credis.
 
 %package devel
-Summary:	C Client library for Redis. Header files for credis.
+Summary:	Header files for credis
+
 %description devel
-Credis is a client library in plain C for communicating with Redis servers. Redis is a high performance key-value database, refer to Redis project page for more information.
-
-Credis aims to be fast and minimalistic with respect to memory usage. It supports connections to multiple Redis servers. It runs on Linux, OS X, Windows, FreeBSD and should run on most POSIX like systems. It is released under the New BSD License.
-
 Header files for credis.
 
 %prep
@@ -50,7 +50,6 @@ ln -s libcredis.so.%{version} libcredis.so
 
 %clean
 rm -rf %{buildroot}
-rm -rf %{builddir}
 
 %files
 %defattr(-,root,root,-)
